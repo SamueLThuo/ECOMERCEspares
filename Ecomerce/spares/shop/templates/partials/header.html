@@ -1,0 +1,46 @@
+<!-- partials/header.html -->
+ 
+<header class="header">
+    
+  <div class="logo">
+      <a href="{% url 'home' %}">Spares</a>
+  </div>
+
+
+  <div class="header-right">
+      <!-- Search Box -->
+      <div class="search-box">
+          <input type="text" placeholder="Search for spare parts...">
+          <button><i class="fas fa-search"></i></button>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div class="navbar">
+          <nav>
+              <a href="{% url 'home' %}">Home</a>
+              <a href="{% url 'deals' %}">Deals</a>
+              <a href="{% url 'categories' %}">Categories</a>
+              <a href="{% url 'contact' %}">Contact</a>
+          </nav>
+      </div>
+
+      <!-- Cart Icon -->
+      <a href="{% url 'cart' %}" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span> <!-- Dynamic cart count -->
+      </a>
+
+      <!-- Account Dropdown -->
+      <div class="account-dropdown-wrapper">
+        <button onclick="toggleDropdown()" class="account-button">
+            <i class="fas fa-user"></i><span> Account</span>
+          </button>
+          
+          <div id="accountDropdown" class="account-dropdown hidden">
+              <a href="{% url 'login' %}">Login</a>
+              <a href="{% url 'signup' %}">SignUp</a>
+          </div>
+      </div>    
+  </div>
+</header>
+    

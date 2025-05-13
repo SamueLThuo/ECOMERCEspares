@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flikkart | Hot Deals</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/style.css' %}">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  {% include 'partials/header.html' %}
+
+  <!-- Deals Banner -->
+  <div class="bg-yellow-300 text-center py-4 shadow-md">
+    <h2 class="text-2xl font-bold text-gray-800">🔥 Hot Deals Just for You!</h2>
+    <p class="text-gray-700 mt-1">Get discounts on selected items while stocks last!</p>
+  </div>
+
+  <!-- Deals Section -->
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      {% for deal in deals %}
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition duration-300 p-4">
+        <img src="{{ deal.image.url }}" alt="{{ deal.name }}" class="w-full h-40 object-cover mb-4 rounded">
+        <h3 class="text-lg font-semibold text-gray-800">{{ deal.name }}</h3>
+        <p class="text-sm text-gray-600 mt-1">Ksh {{ deal.price }}</p>
+        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Add to Cart</button>
+      </div>
+      {% endfor %}
+
+    </div>
+
+    <!-- Shop More -->
+    <div class="text-center mt-8">
+      <a href="{% url 'shop:home' %}" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Shop More</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  {% include 'partials/footer.html' %}
+
+</body>
+</html>

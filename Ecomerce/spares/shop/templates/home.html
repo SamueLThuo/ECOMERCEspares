@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spares</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'shop/style.css' %}">
+  <script src="{% static 'shop/script.js' %}" defer></script>
+
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  {% include 'partials/header.html' %}
+
+
+   <!-- Categories -->
+   <section class="category-section">
+    <div class="category-grid">
+      <div class="category-item"><i class="fas fa-car-battery"></i><p>Mobiles</p></div>
+      <div class="category-item"><i class="fas fa-oil-can"></i><p>Motors</p></div>
+      <div class="category-item"><i class="fas fa-car-side"></i><p>bulding</p></div>
+      <div class="category-item"><i class="fas fa-tools"></i><p>Tools</p></div>
+      <div class="category-item"><i class="fas fa-wrench"></i><p>kitchens</p></div>
+      <div class="category-item"><i class="fas fa-headlight"></i><p>Electric</p></div>
+    </div>
+  </section>
+  
+   <!-- Scrolling Deals Marquee -->
+   <div class="marquee-deals">
+    <marquee behavior="scroll" direction="left">🔥 Hot Deal: Car Battery Ksh 6500 | LED Headlights Ksh 3500 | Brake Pads Ksh 1800 | Free Delivery in Nairobi!</marquee>
+  </div>
+  
+  <!-- Sidebar Filter for Categories -->
+  <aside class="w-full md:w-64 bg-white border shadow p-4 rounded-lg h-full sticky top-16">
+    <h3 class="text-lg font-semibold mb-4">Filter by Category</h3>
+    <form method="GET" action=>
+      <ul class="space-y-3">
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="category" value="electronics" class="form-checkbox text-blue-600">
+            <span>Electronics</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="category" value="fashion" class="form-checkbox text-blue-600">
+            <span>Fashion</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="category" value="home_appliances" class="form-checkbox text-blue-600">
+            <span>Home Appliances</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" name="category" value="automotive" class="form-checkbox text-blue-600">
+            <span>Automotive</span>
+          </label>
+        </li>
+      </ul>
+  
+      <button type="submit" class="mt-5 w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Apply Filters
+      </button>
+    </form>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Shop With Us -->
+    <section class="shop-with-us">
+      <h1>Shop With Us</h1>
+      <p>Find quality spare parts at the best prices. Delivered fast. Guaranteed performance.</p>
+      <button class="cta-button">Shop with us</button>
+    </section>
+    <!-- Products -->
+    <section class="products-section">
+      <h2 class="section-title">🔥 Hot Deals</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/150" alt="Brake Pads">
+          <p class="product-name">Brake Pads</p>
+          <p class="product-price">Ksh 1,800</p>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/150" alt="Car Battery">
+          <p class="product-name">Car Battery</p>
+          <p class="product-price">Ksh 6,500</p>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/150" alt="LED Headlights">
+          <p class="product-name">LED Headlights</p>
+          <p class="product-price">Ksh 3,500</p>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
+      </div>
+      <button class="see-more-btn">Shop More</button>
+
+    </section>
+    <section>
+    <h2 class="section-title">🛠 Tools</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/150" alt="Socket Set">
+          <p class="product-name">Socket Set</p>
+          <p class="product-price">kshs 1500.00</p>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/150" alt="Wrench Kit">
+          <p class="product-name">Wrench Kit</p>
+          <p class="product-price">kshs 1400</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">🔋 Batteries</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/150" alt="Amaron 12V">
+          <p class="product-name">Amaron 12V</p>
+          <p class="product-price">kshs 3400</p>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/150" alt="Exide Premium">
+          <p class="product-name">Exide Premium</p>
+          <p class="product-price">kshs 4500</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <!-- Footer -->
+  {% include 'partials/footer.html' %}
+
+</body>
+</html>
